@@ -6,8 +6,8 @@
  * @description
  */
 
-#ifndef DICTIONARY_DICTIONARYLIST_H
-#define DICTIONARY_DICTIONARYLIST_H
+#ifndef DICTIONARY_DICTIONARY_H
+#define DICTIONARY_DICTIONARY_H
 
 
 #include "Hash.h"
@@ -30,4 +30,4 @@ hash_template *dictionary_next(dictionary *self);
 void dictionary_destroy(dictionary *self);
 
 
-#endif //DICTIONARY_DICTIONARYLIST_H
+#endif //DICTIONARY_DICTIONARY_H

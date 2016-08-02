@@ -6,8 +6,8 @@
  * @description
  */
 
-#ifndef DICTIONARY_DICTIONARY_H
-#define DICTIONARY_DICTIONARY_H
+#ifndef DICTIONARY_HASH_H
+#define DICTIONARY_HASH_H
 
 
 #include <string.h>
@@ -35,4 +35,4 @@ hash *hash_new();
 
 void hash_destroy(hash *self);
 
-#endif //DICTIONARY_DICTIONARY_H
+#endif //DICTIONARY_HASH_H
