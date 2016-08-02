@@ -7,7 +7,7 @@
  */
 
 #include <stdio.h>
-#include "classes/core/Dictionary/Dictionary.h"
+#include "Dictionary.h"
 
 int main(void) {
 
