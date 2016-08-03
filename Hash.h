@@ -13,6 +13,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+/**
+ *
+ */
 typedef struct hash_template_type {
     struct hash_template_type *prev;
     struct hash_template_type *next;
@@ -21,6 +24,9 @@ typedef struct hash_template_type {
 } hash_template;
 
 
+/**
+ *
+ */
 typedef struct {
     hash_template *head;
     hash_template *tail;
@@ -29,10 +35,24 @@ typedef struct {
 } hash;
 
 
+/**
+ *
+ * @param key
+ * @param val
+ * @return
+ */
 hash_template *dictionary_hash_new(char *key, void *val);
 
+/**
+ *
+ * @return
+ */
 hash *hash_new();
 
+/**
+ *
+ * @param self
+ */
 void hash_destroy(hash *self);
 
 #endif //DICTIONARY_HASH_H
