@@ -1,6 +1,6 @@
 /**
  * @fileName Hash.c.
- * @author komatsu
+ * @author komat
  * @version 0.0
  * @date 8/2/16.
  * @description
@@ -28,8 +28,8 @@ hash *hash_new() {
  * @param self
  */
 void hash_destroy(hash *self) {
-    hash_template *next;
-    hash_template *curr = self->head;
+    hash_item *next;
+    hash_item *curr = self->head;
 
     while (curr) {
         next = curr->next;
@@ -48,9 +48,9 @@ void hash_destroy(hash *self) {
  * @param val
  * @return
  */
-hash_template *dictionary_hash_new(char *key, void *val) {
-    hash_template *self;
-    if (!(self = malloc(sizeof(hash_template)))) {
+hash_item *dictionary_hash_new(char *key, void *val) {
+    hash_item *self;
+    if (!(self = malloc(sizeof(hash_item)))) {
         return NULL;
     }
     self->prev = NULL;

@@ -1,6 +1,6 @@
 /**
  * @fileName Hash.h.
- * @author komatsu
+ * @author komat
  * @version 0.0
  * @date 8/2/16.
  * @description
@@ -21,15 +21,15 @@ typedef struct hash_template_type {
     struct hash_template_type *next;
     char *key;
     void *val;
-} hash_template;
+} hash_item;
 
 
 /**
  *
  */
 typedef struct {
-    hash_template *head;
-    hash_template *tail;
+    hash_item *head;
+    hash_item *tail;
 
     void (*free)(char *key, void *val);
 } hash;
@@ -41,7 +41,7 @@ typedef struct {
  * @param val
  * @return
  */
-hash_template *dictionary_hash_new(char *key, void *val);
+hash_item *dictionary_hash_new(char *key, void *val);
 
 /**
  *

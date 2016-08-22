@@ -1,6 +1,6 @@
 /**
  * @fileName Dictionary.h.
- * @author komatsu
+ * @author komat
  * @version 0.0
  * @date 8/2/16.
  * @description
@@ -16,7 +16,7 @@
  *
  */
 typedef struct {
-    hash_template *next;
+    hash_item *next;
 } dictionary;
 
 
@@ -27,7 +27,7 @@ typedef struct {
  * @param val
  * @return
  */
-hash_template *dictionary_set(hash *self, char *key, void *val);
+hash_item *dictionary_set(hash *self, char *key, void *val);
 
 /**
  *
@@ -35,7 +35,7 @@ hash_template *dictionary_set(hash *self, char *key, void *val);
  * @param key
  * @return
  */
-hash_template *dictionary_get(hash *self, char *key);
+hash_item *dictionary_get(hash *self, char *key);
 
 /**
  *
@@ -56,7 +56,7 @@ dictionary *dictionary_new(hash *dict);
  * @param self
  * @return
  */
-hash_template *dictionary_next(dictionary *self);
+hash_item *dictionary_next(dictionary *self);
 
 /**
  *

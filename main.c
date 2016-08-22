@@ -1,7 +1,7 @@
 /**
  * @description
  * @fileName main.c.
- * @author komatsu
+ * @author komat
  * @version 0.0
  * @date 8/2/16.
  */
@@ -17,12 +17,12 @@ int main(void) {
      */
     hash *langs = hash_new();
 
-    hash_template *c = dictionary_set(langs, "c", ".h");
-    hash_template *c_head = dictionary_set(langs, "c", ".c");
-    hash_template *js = dictionary_set(langs, "js", ".js");
-    hash_template *ruby = dictionary_set(langs, "ruby", ".ruby");
+    hash_item *c = dictionary_set(langs, "c", ".h");
+    hash_item *c_head = dictionary_set(langs, "c", ".c");
+    hash_item *js = dictionary_set(langs, "js", ".js");
+    hash_item *ruby = dictionary_set(langs, "ruby", ".ruby");
 
-    hash_template *pair;
+    hash_item *pair;
 
     dictionary *it = dictionary_new(langs);
 
@@ -32,7 +32,7 @@ int main(void) {
         printf("KEY : %s, VAL: %s\n", pair->key, (char *) pair->val);
     }
 
-    hash_template *lang_js = dictionary_get(langs, "js");
+    hash_item *lang_js = dictionary_get(langs, "js");
 
     printf("LANG: %s\n", *lang_js);
 

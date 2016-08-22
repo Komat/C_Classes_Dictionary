@@ -1,6 +1,6 @@
 /**
  * @fileName Dictionary.c.
- * @author komatsu
+ * @author komat
  * @version 0.0
  * @date 8/2/16.
  * @description
@@ -15,7 +15,7 @@
  * @return
  */
 dictionary *dictionary_new(hash *dict) {
-    hash_template *pair = dict->head;
+    hash_item *pair = dict->head;
 
     dictionary *self;
     if (!(self = malloc(sizeof(dictionary)))) {
@@ -32,8 +32,8 @@ dictionary *dictionary_new(hash *dict) {
  * @param self
  * @return
  */
-hash_template *dictionary_next(dictionary *self) {
-    hash_template *curr = self->next;
+hash_item *dictionary_next(dictionary *self) {
+    hash_item *curr = self->next;
     if (curr)
         self->next = curr->next;
     return curr;
@@ -60,7 +60,7 @@ void dictionary_destroy(dictionary *self) {
  * @param key
  */
 void dictionary_remove(hash *self, char *key) {
-    hash_template *pair = dictionary_get(self, key);
+    hash_item *pair = dictionary_get(self, key);
 
     if (!pair) return;
 
@@ -82,9 +82,9 @@ void dictionary_remove(hash *self, char *key) {
  * @param key
  * @return
  */
-hash_template *dictionary_get(hash *self, char *key) {
+hash_item *dictionary_get(hash *self, char *key) {
     dictionary *it = dictionary_new(self);
-    hash_template *pair;
+    hash_item *pair;
 
     while ((pair = dictionary_next(it))) {
         if (strcmp(key, pair->key) == 0) {
@@ -108,9 +108,9 @@ hash_template *dictionary_get(hash *self, char *key) {
  * @param val
  * @return
  */
-hash_template *dictionary_set(hash *self, char *key, void *val) {
+hash_item *dictionary_set(hash *self, char *key, void *val) {
 
-    hash_template *pair = dictionary_get(self, key);
+    hash_item *pair = dictionary_get(self, key);
 
     if (pair) {
         if (self->free) self->free(pair->key, pair->val);
