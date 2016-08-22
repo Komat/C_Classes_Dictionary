@@ -16,9 +16,9 @@
 /**
  *
  */
-typedef struct hash_template_type {
-    struct hash_template_type *prev;
-    struct hash_template_type *next;
+typedef struct hash_item_type {
+    struct hash_item_type *prev;
+    struct hash_item_type *next;
     char *key;
     void *val;
 } hash_item;
